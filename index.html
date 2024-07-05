@@ -96,7 +96,7 @@
                 return;
             }
 
-            const output = words.map(word => `python exploit.py -l ${filepath}/${word.trim()} -o ${word.trim()}.output.txt`).join(' && \n');
+            const output = words.map(word => `python exploit.py -w 150 -l ${filepath}/${word.trim()} -o ${word.trim()}.output.txt`).join(' && \n');
             const lines = output.split('\n');
             let resultHTML = '';
 
