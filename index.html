@@ -96,7 +96,7 @@
                 return;
             }
 
-            const output = words.map(word => `python exploit.py -l ${filepath}/${word.trim()}.txt -o ${word.trim()}.output.txt`).join(' && \n');
+            const output = words.map(word => `python exploit.py -l ${filepath}/${word.trim()} -o ${word.trim()}.output.txt`).join(' && \n');
             const lines = output.split('\n');
             let resultHTML = '';
 
@@ -116,7 +116,7 @@
             const text = document.getElementById(elementId).textContent;
             navigator.clipboard.writeText(text)
                 .then(() => {
-                    alert('Copied to clipboard');
+                    console.log('Copied to clipboard');
                     button.classList.add('clicked');
                 })
                 .catch(err => console.error('Failed to copy:', err));
